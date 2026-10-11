@@ -1,0 +1,2 @@
+# Lumora Labs: Company Overview
+Lumora Labs was founded in 2016 in Pune, India by Anika Rao and Dev Malhotra. The company builds autonomous robots for warehouses. Anika Rao is the Chief Executive Officer and Dev Malhotra is the Chief Technology Officer. The headquarters is in Pune, and a second office opened in Austin, Texas in 2021. As of January 2026 Lumora Labs has 412 employees. The company mission is to make warehouses safer and faster.

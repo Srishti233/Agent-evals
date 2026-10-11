@@ -1,0 +1,355 @@
+[
+  {
+    "id": "fact-01",
+    "category": "factual",
+    "question": "Who founded Lumora Labs?",
+    "gold_answer": "Anika Rao and Dev Malhotra.",
+    "supporting_doc_ids": [
+      "01_company_overview"
+    ]
+  },
+  {
+    "id": "fact-02",
+    "category": "factual",
+    "question": "In which year was Lumora Labs founded?",
+    "gold_answer": "2016.",
+    "supporting_doc_ids": [
+      "01_company_overview"
+    ]
+  },
+  {
+    "id": "fact-03",
+    "category": "factual",
+    "question": "What is the payload capacity of the Atlas robot?",
+    "gold_answer": "1,200 kg.",
+    "supporting_doc_ids": [
+      "02_product_atlas"
+    ]
+  },
+  {
+    "id": "fact-04",
+    "category": "factual",
+    "question": "How long does a full charge of the Atlas battery take?",
+    "gold_answer": "90 minutes.",
+    "supporting_doc_ids": [
+      "02_product_atlas"
+    ]
+  },
+  {
+    "id": "fact-05",
+    "category": "factual",
+    "question": "How many items per hour can the Sparrow robot pick?",
+    "gold_answer": "Up to 600 items per hour.",
+    "supporting_doc_ids": [
+      "03_product_sparrow"
+    ]
+  },
+  {
+    "id": "fact-06",
+    "category": "factual",
+    "question": "How much does the Beacon subscription cost?",
+    "gold_answer": "$150 per robot per month.",
+    "supporting_doc_ids": [
+      "04_product_beacon"
+    ]
+  },
+  {
+    "id": "fact-07",
+    "category": "factual",
+    "question": "How many days of paid annual leave do full-time employees get?",
+    "gold_answer": "24 days per year.",
+    "supporting_doc_ids": [
+      "05_leave_policy"
+    ]
+  },
+  {
+    "id": "fact-08",
+    "category": "factual",
+    "question": "How many weeks of paid parental leave do primary caregivers receive?",
+    "gold_answer": "26 weeks.",
+    "supporting_doc_ids": [
+      "06_parental_leave"
+    ]
+  },
+  {
+    "id": "fact-09",
+    "category": "factual",
+    "question": "On which days are employees expected to be in the office?",
+    "gold_answer": "Tuesday, Wednesday and Thursday.",
+    "supporting_doc_ids": [
+      "07_remote_work"
+    ]
+  },
+  {
+    "id": "fact-10",
+    "category": "factual",
+    "question": "Within how many days must expense claims be submitted?",
+    "gold_answer": "Within 30 days.",
+    "supporting_doc_ids": [
+      "08_expenses"
+    ]
+  },
+  {
+    "id": "fact-11",
+    "category": "factual",
+    "question": "How large is the yearly learning budget per employee?",
+    "gold_answer": "$1,200 per year.",
+    "supporting_doc_ids": [
+      "09_learning_budget"
+    ]
+  },
+  {
+    "id": "fact-12",
+    "category": "factual",
+    "question": "How long is the probation period for new hires?",
+    "gold_answer": "90 days (3 months).",
+    "supporting_doc_ids": [
+      "10_onboarding"
+    ]
+  },
+  {
+    "id": "fact-13",
+    "category": "factual",
+    "question": "How many approvals does a pull request need before it can be merged?",
+    "gold_answer": "Two approvals.",
+    "supporting_doc_ids": [
+      "11_engineering_practices"
+    ]
+  },
+  {
+    "id": "fact-14",
+    "category": "factual",
+    "question": "What is the minimum password length?",
+    "gold_answer": "At least 14 characters.",
+    "supporting_doc_ids": [
+      "12_security_policy"
+    ]
+  },
+  {
+    "id": "fact-15",
+    "category": "factual",
+    "question": "Which safety standard is the Atlas certified to?",
+    "gold_answer": "ISO 3691-4.",
+    "supporting_doc_ids": [
+      "16_safety_standards"
+    ]
+  },
+  {
+    "id": "fact-16",
+    "category": "factual",
+    "question": "How long is the standard warranty?",
+    "gold_answer": "24 months.",
+    "supporting_doc_ids": [
+      "14_sales_pricing"
+    ]
+  },
+  {
+    "id": "mult-01",
+    "category": "multi-hop",
+    "question": "What is the payload of the robot that is assembled at the Chennai plant?",
+    "gold_answer": "5 kg (the Sparrow).",
+    "supporting_doc_ids": [
+      "13_manufacturing",
+      "03_product_sparrow"
+    ]
+  },
+  {
+    "id": "mult-02",
+    "category": "multi-hop",
+    "question": "How long is the burn-in test for the type of robot that Kestrel Logistics runs?",
+    "gold_answer": "72 hours (Kestrel runs Atlas robots).",
+    "supporting_doc_ids": [
+      "18_customers",
+      "13_manufacturing"
+    ]
+  },
+  {
+    "id": "mult-03",
+    "category": "multi-hop",
+    "question": "What is the list price of the robot that Bharat Mart operates?",
+    "gold_answer": "$9,500 per unit (the Sparrow).",
+    "supporting_doc_ids": [
+      "18_customers",
+      "03_product_sparrow"
+    ]
+  },
+  {
+    "id": "mult-04",
+    "category": "multi-hop",
+    "question": "By how much will the payload of Atlas 2 exceed the payload of the current Atlas?",
+    "gold_answer": "600 kg (1,800 kg versus 1,200 kg).",
+    "supporting_doc_ids": [
+      "17_roadmap",
+      "02_product_atlas"
+    ]
+  },
+  {
+    "id": "mult-05",
+    "category": "multi-hop",
+    "question": "In which programming language is the firmware written for the robot that moves pallets?",
+    "gold_answer": "Rust (Atlas moves pallets; robot firmware is written in Rust).",
+    "supporting_doc_ids": [
+      "02_product_atlas",
+      "11_engineering_practices"
+    ]
+  },
+  {
+    "id": "mult-06",
+    "category": "multi-hop",
+    "question": "What is the top speed of the robot model that Kestrel Logistics operates?",
+    "gold_answer": "2.0 m/s (Kestrel runs Atlas robots).",
+    "supporting_doc_ids": [
+      "18_customers",
+      "02_product_atlas"
+    ]
+  },
+  {
+    "id": "mult-07",
+    "category": "multi-hop",
+    "question": "In which city did Lumora Labs open an office in 2021, and how many employees is the planned Munich office targeting?",
+    "gold_answer": "Austin, Texas; the Munich office targets 60 employees.",
+    "supporting_doc_ids": [
+      "01_company_overview",
+      "17_roadmap"
+    ]
+  },
+  {
+    "id": "mult-08",
+    "category": "multi-hop",
+    "question": "Which assembly site has the higher monthly capacity, and which robot does it build?",
+    "gold_answer": "The Chennai plant, which builds Sparrow robots (800 units per month versus 300 in Pune).",
+    "supporting_doc_ids": [
+      "13_manufacturing"
+    ]
+  },
+  {
+    "id": "math-01",
+    "category": "math",
+    "question": "What would 10 Atlas robots cost at list price, before any discount?",
+    "gold_answer": "$240,000.",
+    "supporting_doc_ids": [
+      "02_product_atlas"
+    ]
+  },
+  {
+    "id": "math-02",
+    "category": "math",
+    "question": "What is the price of 25 Atlas robots after the applicable volume discount?",
+    "gold_answer": "$540,000 (25 x $24,000 = $600,000, minus 10%).",
+    "supporting_doc_ids": [
+      "02_product_atlas",
+      "14_sales_pricing"
+    ]
+  },
+  {
+    "id": "math-03",
+    "category": "math",
+    "question": "How much does Beacon cost per month for a site that runs 120 robots?",
+    "gold_answer": "$18,000 per month.",
+    "supporting_doc_ids": [
+      "04_product_beacon"
+    ]
+  },
+  {
+    "id": "math-04",
+    "category": "math",
+    "question": "How many items can one Sparrow pick during an 8-hour shift at its maximum rate?",
+    "gold_answer": "4,800 items.",
+    "supporting_doc_ids": [
+      "03_product_sparrow"
+    ]
+  },
+  {
+    "id": "math-05",
+    "category": "math",
+    "question": "An employee has already used 15 days of annual leave this year. How many annual leave days remain?",
+    "gold_answer": "9 days.",
+    "supporting_doc_ids": [
+      "05_leave_policy"
+    ]
+  },
+  {
+    "id": "math-06",
+    "category": "math",
+    "question": "How many Atlas units can the Pune factory produce in a year at full capacity?",
+    "gold_answer": "3,600 units.",
+    "supporting_doc_ids": [
+      "13_manufacturing"
+    ]
+  },
+  {
+    "id": "math-07",
+    "category": "math",
+    "question": "What is the total price of 6 Sparrow robots after the applicable volume discount?",
+    "gold_answer": "$54,150 (6 x $9,500 = $57,000, minus 5%).",
+    "supporting_doc_ids": [
+      "03_product_sparrow",
+      "14_sales_pricing"
+    ]
+  },
+  {
+    "id": "math-08",
+    "category": "math",
+    "question": "How much on-call allowance does an engineer earn for 4 on-call weeks?",
+    "gold_answer": "$1,400.",
+    "supporting_doc_ids": [
+      "11_engineering_practices"
+    ]
+  },
+  {
+    "id": "unan-01",
+    "category": "unanswerable",
+    "question": "What was Lumora Labs' total revenue in 2025?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-02",
+    "category": "unanswerable",
+    "question": "Who is the Chief Financial Officer of Lumora Labs?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-03",
+    "category": "unanswerable",
+    "question": "What is the top speed of the Sparrow robot?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-04",
+    "category": "unanswerable",
+    "question": "How many days of bereavement leave do employees get?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-05",
+    "category": "unanswerable",
+    "question": "What will the list price of the Atlas 2 be?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-06",
+    "category": "unanswerable",
+    "question": "Which cloud provider hosts the Beacon software?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-07",
+    "category": "unanswerable",
+    "question": "What is Lumora Labs' stock ticker symbol?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  },
+  {
+    "id": "unan-08",
+    "category": "unanswerable",
+    "question": "How many employees work in the Austin office?",
+    "gold_answer": "I don't know.",
+    "supporting_doc_ids": []
+  }
+]

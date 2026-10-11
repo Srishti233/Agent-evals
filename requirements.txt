@@ -1,0 +1,18 @@
+# Core
+numpy>=1.24
+pyyaml>=6.0
+requests>=2.31
+tqdm>=4.66
+rapidfuzz>=3.5
+pandas>=2.0
+# Vector store
+faiss-cpu>=1.7.4
+# Embeddings + NLI (pulls in torch). On a CPU-only server install the CPU wheel first:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers>=2.7
+transformers>=4.40
+# Dashboard
+streamlit>=1.40
+plotly>=5.20
+# Tests
+pytest>=8.0

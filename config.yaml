@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------------------
+# Agent Evals configuration. Relative paths are resolved against this file.
+# ---------------------------------------------------------------------------
+llm:
+  backend: ollama                  # ollama | mock (mock = offline test double)
+  host: http://localhost:11434     # env OLLAMA_HOST overrides (use this for a remote GPU box)
+  model: llama3.2:3b               # agent model
+  judge_model: llama3.2:3b         # judge/optimizer model (can differ, e.g. qwen2.5:7b)
+  timeout_s: 180                   # read timeout per LLM call
+  connect_timeout_s: 5
+  max_retries: 3                   # transport-level retries (timeouts, 5xx, connection errors)
+  backoff_s: 1.5                   # exponential backoff base
+  max_json_retries: 3              # re-ask when the model returns malformed JSON
+  num_ctx: 4096
+  seed: 42                         # makes sampling reproducible where Ollama supports it
+
+embeddings:
+  backend: sentence-transformers   # sentence-transformers | hash (offline test double)
+  model: sentence-transformers/all-MiniLM-L6-v2
+  device: auto                     # auto | cpu | cuda
+
+nli:
+  backend: transformers            # transformers | lexical (offline test double)
+  model: cross-encoder/nli-deberta-v3-small
+  device: auto
+  threshold: 0.5                   # min entailment probability to call a claim supported
+  batch_size: 16
+
+paths:
+  docs_dir: data/docs
+  eval_set: data/eval_set.json
+  index_dir: data/index
+  db: data/runs.db
+  versions_dir: agent/versions
+  changelog: improve/CHANGELOG.md
+  log_dir: logs
+
+agent:
+  max_steps: 4
+  max_tokens: 400
+  chunk_overlap_ratio: 0.2
+  # Used only to bootstrap v1 if agent/versions is empty (a v1.json is shipped).
+  baseline:
+    system_prompt: >-
+      You are a careful assistant for the Lumora Labs employee handbook and product
+      documentation. Always call search_docs before answering a factual question.
+      Answer concisely in one or two sentences using only information found in the
+      search results. If the search results do not contain the answer, reply exactly:
+      I don't know.
+    top_k: 3
+    temperature: 0.2
+    chunk_size: 120
+
+eval:
+  workers: 4                       # parallel questions (match OLLAMA_NUM_PARALLEL on the server)
+  quality_fail_threshold: 0.5      # per-case quality below this counts as a failure
+  max_error_rate: 0.2              # a run with more agent/infra errors than this is invalid
+
+improve:
+  iterations: 3
+  patience: 2                      # stop after this many consecutive non-improving iterations
+  plateau_eps: 0.005               # an accepted gain smaller than this counts as "plateau"
+  min_delta: 0.0                   # candidate must beat best composite by more than this
+  reuse_baseline: true             # reuse the latest stored run of the current version
+  grid:
+    top_k: [2, 3, 4, 5]
+    temperature: [0.0, 0.2, 0.5]
+  max_failure_examples: 8
+
+dashboard:
+  host: 0.0.0.0
+  port: 8501
+
+logging:
+  level: INFO

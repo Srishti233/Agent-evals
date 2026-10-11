@@ -1,0 +1,17 @@
+# Offline smoke-test profile: NO Ollama, NO model downloads, NO network.
+# Uses deterministic stand-ins so the whole pipeline (setup/eval/improve/dashboard)
+# can be exercised on any machine, e.g. in CI. The resulting METRICS ARE NOT MEANINGFUL.
+# State lives under .offline/ so it never touches your real runs/versions.
+extends: config.yaml
+llm:
+  backend: mock
+embeddings:
+  backend: hash
+nli:
+  backend: lexical
+paths:
+  index_dir: .offline/index
+  db: .offline/runs.db
+  versions_dir: .offline/versions
+  changelog: .offline/CHANGELOG.md
+  log_dir: .offline/logs

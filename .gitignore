@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.offline/
+data/index/
+data/runs.db*
+logs/
+.pytest_cache/

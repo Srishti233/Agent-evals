@@ -1,0 +1,52 @@
+# Ollama + the app on one server. Nothing leaves the machine (no API keys, no paid services).
+#   docker compose up -d ollama
+#   docker compose run --rm app python main.py setup
+#   docker compose run --rm app python main.py eval
+#   docker compose run --rm app python main.py improve --iters 3
+#   docker compose up -d dashboard         # http://<server>:8501  (no auth: prefer an SSH tunnel)
+x-app: &app
+  build: .
+  environment:
+    OLLAMA_HOST: http://ollama:11434
+  volumes:
+    - .:/app                                   # data/runs.db, agent/versions, logs persist on the host
+    - hf_cache:/root/.cache/huggingface        # embedding + NLI weights are downloaded once
+  depends_on:
+    ollama:
+      condition: service_healthy
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_NUM_PARALLEL: "4"                 # keep >= eval.workers in config.yaml
+    volumes:
+      - ollama:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    # NVIDIA GPU: install nvidia-container-toolkit on the host, then uncomment:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  app:                                          # one-off CLI commands via `docker compose run --rm app ...`
+    <<: *app
+    profiles: ["cli"]
+    command: ["python", "main.py", "--help"]
+
+  dashboard:
+    <<: *app
+    command: ["python", "main.py", "dashboard"]
+    ports:
+      - "127.0.0.1:8501:8501"                   # bound to localhost; use an SSH tunnel or change deliberately
+
+volumes:
+  ollama:
+  hf_cache:
