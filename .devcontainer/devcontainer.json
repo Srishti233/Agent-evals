@@ -1,7 +1,7 @@
 {
   "name": "agent-evals",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y zstd && curl -fsSL https://ollama.com/install.sh | sh && pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt",
+  "postCreateCommand": "sudo rm -f /etc/apt/sources.list.d/yarn.list; sudo apt-get update; sudo apt-get install -y zstd && curl -fsSL https://ollama.com/install.sh | sh && pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt",
   "postStartCommand": "nohup ollama serve > /tmp/ollama.log 2>&1 &",
   "forwardPorts": [8501],
   "portsAttributes": { "8501": { "label": "Dashboard", "onAutoForward": "notify" } },
