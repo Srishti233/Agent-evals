@@ -1,0 +1,21 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install numpy pyyaml requests tqdm rapidfuzz pandas faiss-cpu streamlit plotly pytest
+      - run: pytest -q
+      - name: Offline pipeline smoke test
+        run: |
+          python main.py --config config.offline.yaml setup
+          python main.py --config config.offline.yaml eval --no-progress
+          python main.py --config config.offline.yaml improve --iters 2
+          
